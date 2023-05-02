@@ -1,8 +1,8 @@
 <div class="container" *ngIf="!submitted">
-  <div class="badge badge-pill badge-info float-right">
-    <h1>{{ ellapsedTime }} / {{ duration }}</h1>
-  </div>
   <form (ngSubmit)="onNext(f)" #f="ngForm" class="myForm">
+    <div class="badge badge-pill badge-info float-right">
+      <h1>{{ ellapsedTime }} / {{ duration }}</h1>
+    </div>
     <div class="row">
       <div class="form-group">
         <label>{{ data.id }}.</label>
@@ -99,7 +99,7 @@
 </div>
 <div class="tcontainer" *ngIf="submitted">
   <div class="row">
-    <h1>Answers Submitted Successfullly</h1>
+    <h1>Answers Submitted Successfully</h1>
   </div>
   <div class="row">
     <button

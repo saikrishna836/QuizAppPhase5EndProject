@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-
 @Injectable({
   providedIn: 'root',
 })
@@ -13,10 +12,8 @@ export class TimeserviceService {
   statement = '';
   submitted: boolean = false;
   constructor() {}
-
   tick(): string {
     const now = new Date();
-
     const diff = (now.getTime() - this.startTime.getTime()) / 1000;
     this.ellapsedTime = this.parseTime(diff);
     this.statement = this.ellapsedTime;
@@ -25,7 +22,6 @@ export class TimeserviceService {
       this.submitted = true;
     }
   }
-
   parseTime(totalSeconds: number) {
     let mins: string | number = Math.floor(totalSeconds / 60);
     let secs: string | number = Math.round(totalSeconds % 60);
