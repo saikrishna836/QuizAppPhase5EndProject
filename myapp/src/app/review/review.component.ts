@@ -14,6 +14,8 @@ export class ReviewComponent implements OnInit {
     private services: TservicesService
   ) {}
   show = false;
+  resultbool = false;
+  score = 0;
   n = 0;
   n1 = 0;
   correct = 0;
@@ -104,7 +106,12 @@ export class ReviewComponent implements OnInit {
       'alert alert-secondary',
       'alert alert-secondary',
     ];
+
     this.id = this.id + 1;
+    if (this.id > 5) {
+      this.resultbool = true;
+      this.score = 5 - this.wrong;
+    }
     if (this.id <= 5) {
       this.services.fetchQuestions(this.topic, this.id).subscribe((data) => {
         this.data = JSON.parse(data);

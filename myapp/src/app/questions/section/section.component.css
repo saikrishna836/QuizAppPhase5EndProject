@@ -1,16 +1,12 @@
 .container {
-  position: absolute;
   top: 0;
-  width: 100%;
+  width: 150%;
   height: 100%;
-  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 .myForm {
-  position: absolute;
-  top: 0;
   width: 100%;
   height: 100%;
   display: flex;
@@ -22,4 +18,14 @@
 #submit {
   width: 7rem;
   align-self: flex-end;
+}
+.tcontainer {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }

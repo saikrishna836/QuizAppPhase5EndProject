@@ -1,7 +1,11 @@
-<div class="information" *ngIf="!show">
-  <h1>You havent attempted any test</h1>
+<div
+  class="alert alert-danger"
+  style="padding-left: 25%"
+  *ngIf="!show && !resultbool"
+>
+  <h1>You haven't attempted any test</h1>
 </div>
-<div class="container" *ngIf="show">
+<div class="container" *ngIf="show && !resultbool">
   <form (ngSubmit)="onNext(f)" #f="ngForm">
     <div class="row">
       <div class="form-group">
@@ -82,16 +86,31 @@
         </label>
       </div>
       <div class="col" *ngIf="last">
-        <label class="result">
-          <span>Total Questions:{{ 5 }}</span
-          ><br />
-          <span>No. of Questions attempted:{{ 5 }}</span
-          ><br />
-          <span>No. of Correct Questions:{{ correct }}</span
-          ><br />
-          <span>No. of wrong Questions:{{ wrong }}</span>
+        <label
+          ><input
+            type="submit"
+            value="Proceed to Score"
+            name="submit"
+            class="btn btn-primary"
+          />
         </label>
       </div>
     </div>
   </form>
+</div>
+<div class="result" *ngIf="resultbool">
+  <label class="list-group" style="align-items: center">
+    <span class="list-group-item" id="tq">Total Questions:{{ 5 }}</span
+    ><br />
+    <span class="list-group-item" id="tq"
+      >No. of Questions attempted:{{ 5 }}</span
+    ><br />
+    <span class="list-group-item" id="tq"
+      >No. of Correct Questions:{{ correct }}</span
+    ><br />
+    <span class="list-group-item" id="tq"
+      >No. of wrong Questions:{{ wrong }}</span
+    ><br />
+    <span class="list-group-item" id="tq">Total Marks:{{ score }}/5</span>
+  </label>
 </div>

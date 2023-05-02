@@ -1,7 +1,6 @@
-.result {
-  background-color: tan;
-  width: 40rem;
-  align-self: left;
-  padding-left: 15%;
-  position: absolute;
+#tq {
+  background-color: darkslategray;
+  text-decoration: cornsilk;
+  width: 25rem;
+  text-decoration-color: blanchedalmond;
 }

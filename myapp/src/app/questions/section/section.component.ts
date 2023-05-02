@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Result } from 'src/app/datamodels/data.model';
 import { TimeserviceService } from 'src/app/timeservice.service';
 import { TservicesService } from 'src/app/tservices.service';
 
@@ -67,7 +66,6 @@ export class SectionComponent implements OnInit {
     if (!(this.id > 5 && this.ellapsedTime <= this.duration)) {
       this.user_answers.push(form.value.option);
 
-      console.log(this.user_answers);
       this.services.fetchQuestions(this.topic, this.id).subscribe((data) => {
         this.data = JSON.parse(data);
       });
@@ -77,7 +75,6 @@ export class SectionComponent implements OnInit {
       }
       form.reset();
     } else {
-      console.log('Answers:' + this.user_answers);
       this.submitted = true;
     }
   }
