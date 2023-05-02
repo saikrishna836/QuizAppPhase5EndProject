@@ -15,12 +15,15 @@ export class ReviewComponent implements OnInit {
   ) {}
   show = false;
   n = 0;
+  n1 = 0;
+  correct = 0;
+  wrong = 0;
   id: number = 1;
-  selected: any = [];
+  selections: string[] = [];
   temp: any = [];
-  static selections: any = [];
+  len: number = 0;
 
-  static topic: string = '';
+  topic: string = '';
   obj: any = {};
   questions: any = [];
   last = false;
@@ -52,6 +55,7 @@ export class ReviewComponent implements OnInit {
     'alert alert-secondary',
   ];
   labels() {
+    console.log('labels:' + this.data.answer);
     if (this.data.answer == 'D') {
       this.n = 4;
     } else if (this.data.answer == 'C') {
@@ -61,32 +65,37 @@ export class ReviewComponent implements OnInit {
     } else if (this.data.answer == 'A') {
       this.n = 1;
     }
-    if (ReviewComponent.selections[this.id - 1].valueOf() == this.n) {
+    if (this.selections[this.id - 1].valueOf() == 'D') {
+      this.n1 = 4;
+    } else if (this.selections[this.id - 1].valueOf() == 'C') {
+      this.n1 = 3;
+    } else if (this.selections[this.id - 1].valueOf() == 'B') {
+      this.n1 = 2;
+    } else if (this.selections[this.id - 1].valueOf() == 'A') {
+      this.n1 = 1;
+    }
+    if (this.n1 == this.n) {
       this.labellings[this.n - 1] = 'alert alert-success';
+      this.correct = this.correct + 1;
     } else {
-      this.labellings[ReviewComponent.selections[this.id - 1].valueOf()] =
-        'alert alert-danger';
+      this.wrong = this.wrong + 1;
+      this.labellings[this.n1 - 1] = 'alert alert-danger';
       this.labellings[this.n - 1] = 'alert alert-success';
     }
   }
   // ngInit
   ngOnInit(): void {
     this.route.queryParams.subscribe((params) => {
-      this.selected = params['2'];
-      ReviewComponent.topic = params['1'];
+      this.selections = params['2'];
+      this.topic = params['1'];
       this.show = params['3'];
-      for (let s in this.selected) {
-        this.temp = this.services.transform(s);
-        ReviewComponent.selections.push(JSON.parse(this.temp));
-      }
+      this.len = this.selections.length;
     });
 
-    this.services
-      .fetchQuestions(ReviewComponent.topic, this.id)
-      .subscribe((data) => {
-        this.data = JSON.parse(data);
-        this.labels();
-      });
+    this.services.fetchQuestions(this.topic, this.id).subscribe((data) => {
+      this.data = JSON.parse(data);
+      this.labels();
+    });
   }
   onNext(form: NgForm) {
     this.labellings = [
@@ -96,18 +105,16 @@ export class ReviewComponent implements OnInit {
       'alert alert-secondary',
     ];
     this.id = this.id + 1;
-    if (!(this.id > 5)) {
-      this.services
-        .fetchQuestions(ReviewComponent.topic, this.id)
-        .subscribe((data) => {
-          this.data = JSON.parse(data);
-        });
+    if (this.id <= 5) {
+      this.services.fetchQuestions(this.topic, this.id).subscribe((data) => {
+        this.data = JSON.parse(data);
+        this.labels();
+      });
 
       if (this.id == 5) {
         this.last = true;
       }
       form.reset();
     }
-    this.labels();
   }
 }

@@ -10,7 +10,7 @@ import { TservicesService } from 'src/app/tservices.service';
   styleUrls: ['./section.component.css'],
 })
 export class SectionComponent implements OnInit {
-  user_answers: { user: string; actual: string }[] = [];
+  user_answers: string[] = [];
 
   last: boolean = false;
   constructor(
@@ -62,16 +62,10 @@ export class SectionComponent implements OnInit {
   onNext(form: NgForm) {
     this.id = this.id + 1;
     if (this.id == 6) {
-      this.user_answers.push({
-        user: form.value.option,
-        actual: this.data.answer,
-      });
+      this.user_answers.push(form.value.option);
     }
     if (!(this.id > 5 && this.ellapsedTime <= this.duration)) {
-      this.user_answers.push({
-        user: form.value.option,
-        actual: this.data.answer,
-      });
+      this.user_answers.push(form.value.option);
 
       console.log(this.user_answers);
       this.services.fetchQuestions(this.topic, this.id).subscribe((data) => {
@@ -83,6 +77,7 @@ export class SectionComponent implements OnInit {
       }
       form.reset();
     } else {
+      console.log('Answers:' + this.user_answers);
       this.submitted = true;
     }
   }

@@ -1,4 +1,4 @@
-<div class="information">
+<div class="information" *ngIf="!show">
   <h1>You havent attempted any test</h1>
 </div>
 <div class="container" *ngIf="show">
@@ -82,14 +82,14 @@
         </label>
       </div>
       <div class="col" *ngIf="last">
-        <label
-          ><input
-            type="submit"
-            value="Submit"
-            name="submit"
-            class="btn btn-primary"
-            style="width: 5rem"
-          />
+        <label class="result">
+          <span>Total Questions:{{ 5 }}</span
+          ><br />
+          <span>No. of Questions attempted:{{ 5 }}</span
+          ><br />
+          <span>No. of Correct Questions:{{ correct }}</span
+          ><br />
+          <span>No. of wrong Questions:{{ wrong }}</span>
         </label>
       </div>
     </div>
