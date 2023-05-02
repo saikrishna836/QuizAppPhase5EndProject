@@ -1,0 +1,111 @@
+<div class="container" *ngIf="!submitted">
+  <form (ngSubmit)="onNext(f)" #f="ngForm" class="myForm">
+    <div *ngIf="durationt" class="badge badge-info float-right">
+      Time:{{ ellapsedTime }} / {{ duration }}
+    </div>
+    <div class="row">
+      <div class="form-group">
+        <label>{{ data.id }}.</label>
+        <label>{{ data.question }}</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="radio">
+          <ul class="list-group" style="width: 40rem">
+            <li class="list-group-item">
+              <label
+                ><input
+                  type="radio"
+                  name="option"
+                  [value]="options[0]"
+                  ngModel
+                  required
+                  #option="ngModel"
+                />
+                {{ data.options.A }}
+              </label>
+            </li>
+            <li class="list-group-item">
+              <label
+                ><input
+                  type="radio"
+                  name="option"
+                  [value]="options[1]"
+                  ngModel
+                  required
+                  #option="ngModel"
+                />
+                {{ data.options.B }}
+              </label>
+            </li>
+            <li class="list-group-item">
+              <label
+                ><input
+                  type="radio"
+                  name="option"
+                  [value]="options[2]"
+                  ngModel
+                  required
+                  #option="ngModel"
+                />
+                {{ data.options.C }}
+              </label>
+            </li>
+            <li class="list-group-item">
+              <label
+                ><input
+                  type="radio"
+                  name="option"
+                  [value]="options[3]"
+                  ngModel
+                  required
+                  #option="ngModel"
+                />
+                {{ data.options.D }}
+              </label>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col" *ngIf="!last">
+        <label
+          ><input
+            type="submit"
+            value="Next"
+            name="submit"
+            class="btn btn-primary"
+            [disabled]="!option.valid"
+            id="submit"
+          />
+        </label>
+      </div>
+      <div class="col" *ngIf="last">
+        <label
+          ><input
+            type="submit"
+            value="Submit"
+            name="submit"
+            class="btn btn-primary"
+            [disabled]="!option.valid"
+            style="width: 5rem"
+          />
+        </label>
+      </div>
+    </div>
+  </form>
+</div>
+<div class="tcontainer">
+  <div class="row">
+    <h1>Answers Submitted Successfullly</h1>
+    <button
+      class="btn btn-primary"
+      [routerLink]="['review']"
+      [queryParams]="{ '1': topic, '2': user_answers, '3': true }"
+    >
+      Review Results
+    </button>
+  </div>
+</div>

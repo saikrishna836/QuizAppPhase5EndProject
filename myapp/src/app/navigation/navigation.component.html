@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-lg navbar-white bg-dark">
+  <div class="container">
+    <img
+      src="assets/logoes/quiz.png"
+      height="100px"
+      width="100px"
+      class="navbar-brand"
+    />
+    <ul class="navbar-nav">
+      <li
+        role="presentation"
+        class="nav-item"
+        routerLinkActive="active"
+        routerLinkActiveOption="{exact:true}"
+      >
+        <a class="nav-link" routerLink="home">Home</a>
+      </li>
+      <li
+        role="presentation"
+        class="nav-item"
+        routerLinkActive="active"
+        routerLinkActiveOption="{exact:true}"
+      >
+        <a class="nav-link" routerLink="review">Review and Result</a>
+      </li>
+      <li
+        role="presentation"
+        class="nav-item"
+        routerLinkActive="active"
+        routerLinkActiveOption="{exact:true}"
+      >
+        <a class="nav-link" routerLink="contact">Contact Us</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="row">
+  <div class="col">
+    <router-outlet></router-outlet>
+  </div>
+</div>

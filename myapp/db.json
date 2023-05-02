@@ -1,0 +1,173 @@
+{
+  "angular": [
+    {
+      "id": 1,
+      "question": "Which of the following is correct?",
+      "options": {
+        "A": "Angular is based on TypeScript.",
+        "B": "This is a superset of JavaScript.",
+        "C": "TypeScript is maintained by Microsoft.",
+        "D": "All of the above."
+      },
+      "answer": "D"
+    },
+    {
+      "id": 2,
+      "question": "What is .subscribe?",
+      "options": {
+        "A": "Streams data in asynchronously",
+        "B": "Streams data in synchronously",
+        "C": "Both",
+        "D": "None of the Above"
+      },
+      "answer": "C"
+    },
+    {
+      "id": 3,
+      "question": "What does AOT stand for?",
+      "options": {
+        "A": "Ahead-Of-Time Compilation",
+        "B": "Angular Object Templates",
+        "C": "Both",
+        "D": "None of the Above"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 4,
+      "question": "Which of the following is not a hook application life cycle?",
+      "options": {
+        "A": "ngOnChanges",
+        "B": "ngViewStart",
+        "C": "ngOnInit",
+        "D": "None of the above"
+      },
+      "answer": "B"
+    },
+    {
+      "id": 5,
+      "question": "Router is part of which of the following module?",
+      "options": {
+        "A": "@angular/core",
+        "B": "@angular/router",
+        "C": "Both",
+        "D": "None of the above"
+      },
+      "answer": "B"
+    }
+  ],
+  "springboot": [
+    {
+      "id": 1,
+      "question": "Spring Boot is used for developing?",
+      "options": {
+        "A": "Web applications",
+        "B": "Distributed applications (Restful web services)",
+        "C": "Microservices.",
+        "D": "All of the above."
+      },
+      "answer": "D"
+    },
+    {
+      "id": 2,
+      "question": "What is Spring Initializer?",
+      "options": {
+        "A": "A web-based tool for generating a basic Spring Boot project structure",
+        "B": "A command-line tool for generating a basic Spring Boot project structure",
+        "C": "A tool for initializing a Spring-based application with a specific set of dependencies",
+        "D": "A tool for creating a Spring Boot application with a specific set of features"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 3,
+      "question": "What does Spring Boot do to simplify the configuration of a Spring-based application?",
+      "options": {
+        "A": "Automatically configures necessary beans and dependencies",
+        "B": "Uses annotations to configure beans and dependencies",
+        "C": "Allows for the use of XML configuration files",
+        "D": "Provides a command line interface for configuring the application"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 4,
+      "question": "How can a Spring Boot application be packaged and distributed?",
+      "options": {
+        "A": "As a JAR file ",
+        "B": "As a WAR file ",
+        "C": "As a ZIP file",
+        "D": "All of the above"
+      },
+      "answer": "D"
+    },
+    {
+      "id": 5,
+      "question": " Which Spring annotation is used to create RESTful web services using Spring MVC?",
+      "options": {
+        "A": "@RestController",
+        "B": "@Controller",
+        "C": "@Component",
+        "D": "@Rest"
+      },
+      "answer": "A"
+    }
+  ],
+  "javascript": [
+    {
+      "id": 1,
+      "question": "Javascript is an _______ language?",
+      "options": {
+        "A": "Object Oriented",
+        "B": "Object-based",
+        "C": "Procedural",
+        "D": "None of the above."
+      },
+      "answer": "A"
+    },
+    {
+      "id": 2,
+      "question": "Which of the following keywords is used to define a variable in Javascript?",
+      "options": {
+        "A": "var",
+        "B": "let",
+        "C": "Both A &B",
+        "D": "None of the Above"
+      },
+      "answer": "C"
+    },
+    {
+      "id": 3,
+      "question": "Which of the following methods is used to access HTML elements using Javascript?",
+      "options": {
+        "A": "getElementById()",
+        "B": "getElementByClassName()",
+        "C": "Both A& B",
+        "D": "None of the Above"
+      },
+      "answer": "C"
+    },
+    {
+      "id": 4,
+      "question": "Upon encountering empty statements, what does the Javascript Interpreter do?",
+      "options": {
+        "A": "Throws an Error ",
+        "B": "Ignores the statements ",
+        "C": "Gives a warning",
+        "D": "None of the Above"
+      },
+      "answer": "B"
+    },
+    {
+      "id": 5,
+      "question": "Which of the following methods can be used to display data in some form using Javascript?",
+      "options": {
+        "A": "document.write()",
+        "B": "console.log()",
+        "C": "window.alert()",
+        "D": "All of the above"
+      },
+      "answer": "D"
+    }
+  ]
+}

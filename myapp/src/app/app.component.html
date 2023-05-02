@@ -1,0 +1,6 @@
+<html>
+  <body>
+    <app-navigation *ngIf="!status"></app-navigation>
+    <app-questions *ngIf="status" [topic]="topic"></app-questions>
+  </body>
+</html>

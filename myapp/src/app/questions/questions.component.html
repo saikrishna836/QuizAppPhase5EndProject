@@ -1,0 +1,37 @@
+<div class="start-screen" *ngIf="!start">
+  <div class="start-button" (click)="onStart()">Start</div>
+</div>
+<div class="container" *ngIf="start && !read">
+  <div class="incontainer">
+    <div class="alert alert-warning w-45" style="text-align: center">
+      <span><strong>Please Read following instructions!!</strong></span>
+    </div>
+    <div class="alert alert-info" style="width: 40rem">
+      <span>Exam contains 5 questions</span>
+    </div>
+    <br />
+    <div class="alert alert-info" style="width: 40rem">
+      <span>Exam should be completed in 5 minutes</span>
+    </div>
+    <br />
+    <div class="alert alert-info" style="width: 40rem">
+      <span>No extra time is given</span>
+    </div>
+    <br />
+    <div class="alert alert-info" style="width: 40rem">
+      <span>Kindly answer all questions</span>
+    </div>
+    <div class="bcontainer">
+      <button
+        class="btn btn-primary"
+        (click)="onReadInstructions()"
+        id="proceed"
+      >
+        Proceed
+      </button>
+    </div>
+  </div>
+</div>
+<div class="quiz_box" *ngIf="read">
+  <app-section [topic]="topic"></app-section>
+</div>
